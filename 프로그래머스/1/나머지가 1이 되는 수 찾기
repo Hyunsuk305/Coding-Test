@@ -16,7 +16,7 @@ n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를
 3 ≤ n ≤ 1,000,000
 
 """
-#풀이
+# 풀이
 class Solution {
     public int solution(int n) {
         int answer = 0;
@@ -30,7 +30,7 @@ class Solution {
     }
 }
 
-#다른 풀이
+# 다른 풀이
 class Solution {
     public int solution(int n) {
         int answer = 1;
