@@ -1,0 +1,65 @@
+"""
+문제 설명:
+양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 
+예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 
+자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.
+
+예시: 
+입출력 예 #1
+10의 모든 자릿수의 합은 1입니다. 10은 1로 나누어 떨어지므로 10은 하샤드 수입니다.
+
+입출력 예 #2
+12의 모든 자릿수의 합은 3입니다. 12는 3으로 나누어 떨어지므로 12는 하샤드 수입니다.
+
+입출력 예 #3
+11의 모든 자릿수의 합은 2입니다. 11은 2로 나누어 떨어지지 않으므로 11는 하샤드 수가 아닙니다.
+
+입출력 예 #4
+13의 모든 자릿수의 합은 4입니다. 13은 4로 나누어 떨어지지 않으므로 13은 하샤드 수가 아닙니다.
+
+제한 사항:
+x는 1 이상, 10000 이하인 정수입니다.
+
+"""
+
+
+#풀이
+class Solution {
+    public boolean solution(int x) {
+        boolean answer = true;
+        int sum = 0;
+        int num = x;
+        while(x > 0){
+            sum += x % 10;
+            x /= 10;
+        }
+        if(num % sum == 0){
+            answer = true;
+        } else {
+            answer = false;
+        }
+        return answer;
+    }
+} }
+}
+
+"""
+x가 무조건 0으로 줄어들기 때문에 answer을 확인하려면 복사본 변수 하나 할당해야함.
+if문 사용하지 않고 바로 return num % sum == 0; 작성하면 boolean 판단해줌. 
+"""
+
+#다른 풀이
+public class HarshadNumber{
+    public boolean isHarshad(int num){
+    String [] tmp = String.valueOf(num).split("");
+    int sum=0;
+        for(String s:tmp) {
+            sum+=Integer.parseInt(s);
+        }
+
+       // 아래는 테스트로 출력해 보기 위한 코드입니다.
+    public static void  main(String[] args){
+        HarshadNumber sn = new HarshadNumber();
+        System.out.println(sn.isHarshad(18));
+    }
+}
